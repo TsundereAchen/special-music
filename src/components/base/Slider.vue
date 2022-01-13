@@ -103,6 +103,9 @@ export default {
   mounted() {
     this.startPlay();
   },
+  beforeDestroy() {
+    clearInterval(this.timer);
+  }
 };
 </script>
 

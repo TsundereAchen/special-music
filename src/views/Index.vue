@@ -25,6 +25,7 @@ export default {
 <style scoped>
 .index {
   text-align: center;
+  width: 100%;
 }
 .index ul {
   display: flex;
@@ -36,7 +37,7 @@ export default {
 }
 .index ul li {
   margin-right: 20px;
-  width: calc((100%-100px) / 5);
+  width: calc(100em / 6);
 }
 .index img {
   width: 26px;
