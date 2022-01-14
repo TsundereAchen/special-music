@@ -2,7 +2,7 @@
   <div>
     <Slider :banners="slider"> </Slider>
     <NewsongList :songList="songList"></NewsongList>
-    <Bottom></Bottom>
+    <Bottom isShowSpan="true"></Bottom>
   </div>
 </template>
 
@@ -33,6 +33,7 @@ export default {
       });
       this.slider = res.banner;
       this.songList = res.data.splice(0, 5);
+      console.log(this.slider)
     },
   },
 };

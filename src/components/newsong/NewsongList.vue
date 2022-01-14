@@ -1,8 +1,10 @@
 <template>
   <div class="newsongContainer">
     <div class="list" v-for="item in songList" :key="item.album_id">
-      <div class="name">{{ item.filename }}</div>
-      <span class="iconfont">&#xe8c6;</span>
+      <a :href="item.song_url">
+        <div class="name">{{ item.filename }}</div>
+        <span class="iconfont">&#xe8c6;</span>
+      </a>
     </div>
   </div>
 </template>
@@ -10,6 +12,7 @@
 <script>
 export default {
   props: {
+    isShowRank: false,
     songList: [],
   },
 };
@@ -31,6 +34,11 @@ export default {
   .name {
     float: left;
     margin-left: 10px;
+    text-align: left;
+    overflow: hidden;
+    max-width: 300px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   .iconfont {
     position: absolute;
