@@ -1,9 +1,18 @@
 <template>
   <div class="container">
     <div class="rank-item" v-for="item in rankList" :key="item.id">
-      <img v-lazy="item.album_img_9" />
-      <span class="name">{{ item.rankname }}</span>
-      <span class="iconfont">&#xe775;</span>
+        <router-link
+          :to="{
+            name: 'underrank',
+            params: {
+              rankid: item.rankid,
+            },
+          }"
+        >
+          <img v-lazy="item.album_img_9" />
+          <span class="name">{{ item.rankname }}</span>
+          <span class="iconfont">&#xe775;</span>
+        </router-link>
     </div>
   </div>
 </template>
@@ -22,9 +31,9 @@ export default {
     async getRankList() {
       const { data: res } = await this.$axios.get("/rank/list&json=true");
       this.rankList = res.rank.list;
-      this.rankList.forEach(item=>{
-          item.album_img_9 = item.album_img_9.replace('{size}','400')
-      })
+      this.rankList.forEach((item) => {
+        item.album_img_9 = item.album_img_9.replace("{size}", "400");
+      });
       console.log(res.rank);
     },
   },

@@ -8,7 +8,6 @@
       <li><router-link to="/rank">排行</router-link></li>
       <li><router-link to="/songList">歌单</router-link></li>
       <li><router-link to="/artists">歌手</router-link></li>
-      <li><router-link to="/listenBook">听书</router-link></li>
     </ul>
     <router-view></router-view>
   </div>
