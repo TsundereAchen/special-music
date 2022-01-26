@@ -2,10 +2,18 @@
   <div>
     <div class="artgroup" v-for="item in artists" :key="item[0].classid">
       <div class="artitem" v-for="i in item" :key="i.classid">
-        <p>
-          <span>{{i.classname}}</span>
-          <i class="iconfont enter">&#xe775;</i>
-        </p>
+        <router-link
+          :to="{
+            name: 'underart',
+            params: {
+              classid: i.classid,
+            },
+          }"
+          ><p>
+            <span>{{ i.classname }}</span>
+            <i class="iconfont enter">&#xe775;</i>
+          </p>
+        </router-link>
       </div>
     </div>
   </div>

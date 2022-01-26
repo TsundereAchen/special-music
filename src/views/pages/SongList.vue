@@ -1,7 +1,14 @@
 <template>
   <div class="container">
     <div class="infolist" v-for="item in infoList" :key="item.specialid">
-      <a href="#">
+      <router-link
+        :to="{
+          name: 'undersong',
+          params: {
+            specialid: item.specialid ,
+          },
+        }"
+      >
         <div class="img"><img v-lazy="item.imgurl" /></div>
         <div class="info">
           <p class="intro">{{ item.intro }}</p>
@@ -11,7 +18,7 @@
           </p>
         </div>
         <span class="iconfont enter">&#xe775;</span>
-      </a>
+      </router-link>
     </div>
   </div>
 </template>
@@ -42,16 +49,10 @@ export default {
 <style lang="scss" scoped>
 .infolist {
   box-sizing: border-box;
-  margin-left: 20px;
+  margin-left: 8px;
   height: 140px;
   border-bottom: 1px solid #ccc;
-  padding-top: 10px;
-  a {
-    width: 100%;
-    height: 100%;
-  }
-}
-.infolist {
+  padding-top: 10px;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
   .img {
     float: left;
     margin-right: 10px;
@@ -76,8 +77,8 @@ export default {
     }
   }
   .enter {
-      float: right;
-      right: 10px;
+    float: right;
+    right: 10px;
   }
 }
 </style>

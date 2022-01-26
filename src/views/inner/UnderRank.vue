@@ -28,15 +28,15 @@ export default {
     HomeBottom
   },
   created() {
-   if(localStorage.rankid) this.rankid = localStorage.rankid
+   if(sessionStorage.rankid) this.rankid = sessionStorage.rankid
   },
   mounted() {
     this.rankid = this.rankid | this.$route.params.rankid;
-    localStorage.rankid = this.rankid
+    sessionStorage.rankid = this.rankid
     this.getRankTopInfo();
   },
   destroyed() {
-    localStorage.rankid = null
+    sessionStorage.rankid = null
   },
   methods: {
     async getRankTopInfo() {

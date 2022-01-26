@@ -20,6 +20,8 @@ const routes = [
     ]
   },
   { path: '/underrank', name: 'underrank', component: () => import('@/views/inner/UnderRank') },
+  { path: '/undersong', name: 'undersong', component: () => import('@/views/inner/UnderSong') },
+  { path: '/underart', name: 'underart', component: () => import('@/views/inner/UnderArtists') },
 ]
 
 const router = new VueRouter({
