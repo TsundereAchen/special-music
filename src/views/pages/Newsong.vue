@@ -1,6 +1,8 @@
 <template>
   <div>
     <Slider :banners="slider"> </Slider>
+    <!-- <ScrollView :songList="songList"></ScrollView> -->
+    <HorizontalList :songList="songList"></HorizontalList>
     <NewsongList :songList="songList"></NewsongList>
     <Bottom isShowSpan="true"></Bottom>
   </div>
@@ -8,8 +10,11 @@
 
 <script>
 import Slider from "../../components/base/Slider.vue";
-import NewsongList from '../../components/newsong/NewsongList'
-import Bottom from '../../components/newsong/HomeBottom'
+import ScrollView from "../../components/base/ScrollView.vue";
+import NewsongList from "../../components/newsong/NewsongList";
+import Bottom from "../../components/newsong/HomeBottom";
+import HorizontalList from "../../components/HorizontalList";
+
 export default {
   name: "",
   data() {
@@ -21,7 +26,9 @@ export default {
   components: {
     Slider,
     NewsongList,
-    Bottom
+    Bottom,
+    HorizontalList,
+    ScrollView,
   },
   created() {
     this.getData();
@@ -33,8 +40,17 @@ export default {
       });
       this.slider = res.banner;
       this.songList = res.data.splice(0, 5);
-      console.log(this.slider)
+      this.songList.forEach((item) => {
+        item.album_sizable_cover = item.album_sizable_cover.replace(
+          "{size}",
+          "400"
+        );
+      });
     },
   },
 };
 </script>
+
+<style lang="scss" scoped>
+
+</style>

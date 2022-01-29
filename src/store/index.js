@@ -6,7 +6,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     specialid: 0,
-    classid: 0
+    classid: 0,
+    songList: []
   },
   mutations: {
   },

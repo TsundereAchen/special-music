@@ -1,6 +1,6 @@
 <template>
   <div class="newsongContainer">
-    <div class="list" v-for="(item, index) in songList" :key="item.album_id">
+    <div class="list" v-for="(item, index) in songList" :key="item.audio_id">
       <a :href="item.song_url">
         <div
           :class="{
@@ -25,7 +25,7 @@ export default {
   props: {
     isShowRank: Boolean,
     songList: [],
-  },
+  }
 };
 </script>
 

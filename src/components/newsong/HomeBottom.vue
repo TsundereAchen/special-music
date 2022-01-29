@@ -17,7 +17,6 @@ export default {
 
 <style lang="scss" scoped>
 .homebottom {
-  transform: translateX(25%);
   display: inline-block;
   .desc {
     margin-bottom: 30px;
