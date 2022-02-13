@@ -41,7 +41,7 @@ export default {
   methods: {
     async getRankTopInfo() {
       const { data: res } = await this.$axios.get(
-        `/rank/info/?rankid=${this.rankid}&page=1&json=true`
+        `/rank/info/?rankid=${this.$route.query.rankid}&page=1&json=true`
       );
       console.log(res);
       this.info.rankname = res.info.rankname;

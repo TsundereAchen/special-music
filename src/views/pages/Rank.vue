@@ -3,8 +3,8 @@
     <div class="rank-item" v-for="item in rankList" :key="item.id">
         <router-link
           :to="{
-            name: 'underrank',
-            params: {
+            path: '/underrank',
+            query: {
               rankid: item.rankid,
             },
           }"
